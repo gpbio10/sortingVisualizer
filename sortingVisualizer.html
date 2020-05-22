@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sortingVisualizer.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <h1>Sorting Visualizer</h1>
+
+    <div class = "buttons">
+      <button class="button button2" onclick="quickSort(values, 0, values.length - 1)">Quick Sort</button>
+      <button class="button button3" onclick="bubbleSort(values, 0, values.length - 1)">Bubble Sort</button>
+      <button class="button button4" onclick="quickSort">Merge Sort</button>
+    </div> 
+
+    <script src="quickSort.js"></script>
+  </body>
+</html>
