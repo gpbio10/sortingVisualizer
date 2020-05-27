@@ -2,14 +2,16 @@ let i = 0;
 let n = 0;
 let j = 0;
 let w = 5;
+;
 let heights = [];
 let sortingMethod = 0;
 let pivot = 0;
 let pivotValue = 0;
 let pivotIndex = 0;
+let wp = 5;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight / 1.25);
+    createCanvas(windowWidth, windowHeight / 1.4);
     heights = Array(floor(width / w));
     for (let i = 0; i < heights.length; i++) {
         heights[i] = random(height - 50) + 20;
@@ -17,6 +19,15 @@ function setup() {
 }
 
 function draw() {
+
+    let slider = document.getElementById("myRange");
+    w = slider.value;
+
+    if (w != wp) {
+        heights = Array(floor(width / w));
+        regenerate(heights);
+        wp = w;
+    }
 
     document.getElementById("regenerate").onclick = function() {regenerate(heights)};
 
@@ -43,8 +54,8 @@ function updateBars(array) {
     background('#00aea9');
     noStroke();
     for (let i = 0; i < array.length; i++) {
-        fill(0);
-        rect(i * w, height - array[i], 2, array[i]);
+        fill(array[i]/2);
+        rect(i * w, height - array[i], w-2, array[i]);
     }
 }
 
